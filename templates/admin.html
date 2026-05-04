@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Sky Foundation</title>
+
+    <!-- ✅ CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>Sky Foundation</h2>
+    </header>
+
+    <!-- HERO / HOME -->
+    <section>
+        <h1>Universal Skills Passport</h1>
+        <p>Manage and oversee the institutional skills tracking system.</p>
+    </section>
+
+    <!-- LOGIN SECTION -->
+    <section id="login">
+        <h2>Admin Login</h2>
+
+        <form id="loginForm">
+            <label>Email Address *</label><br>
+            <input type="email" id="email" required><br><br>
+
+            <label>Password *</label><br>
+            <input type="password" id="password" required><br><br>
+
+            <!-- ✅ CAPTCHA -->
+            <div>
+                <span id="loginCaptcha"></span>
+                <button type="button" onclick="generateCaptcha('login')">Refresh</button>
+            </div>
+
+            <input type="text" id="loginCaptchaInput" placeholder="Enter captcha" required><br><br>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" style="display:none;">
+        <h2>Dashboard</h2>
+        <p>Welcome Admin!</p>
+
+        <!-- OPTIONAL LOGOUT BUTTON -->
+        <button onclick="logout()">Logout</button>
+    </section>
+
+    <!-- ✅ JS -->
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
+</body>
+</html>
